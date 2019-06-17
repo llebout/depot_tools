@@ -45,7 +45,7 @@ def main(args):
   # thereof), but instead reference the default python from the PATH.
   PruneVirtualEnv()
 
-  return subprocess.call(["gn"] + args[1:])
+  return subprocess.call([os.environ["DEPOT_TOOLS_GN"]] + args[1:])
 
   # Try in primary solution location first, with the gn binary having been
   # downloaded by cipd in the projects DEPS.
